@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+/* Animation styles for the About page */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* Slider animations */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.8s ease-out forwards;
+}
+
+/* Icon rotation animation */
+.transform.rotate-360 {
+  transform: rotate(360deg);
+}
