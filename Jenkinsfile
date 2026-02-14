@@ -2,19 +2,28 @@ pipeline {
     agent any
 
     tools {
-        nodejs 'Node20'
+        nodejs 'Node20' 
     }
 
     stages {
 
         stage('Install Dependencies') {
             steps {
+                // Install npm packages
                 bat 'npm install'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                // Run automated tests
+                bat 'npm test'
             }
         }
 
         stage('Build Project') {
             steps {
+                // Build React + Vite project
                 bat 'npm run build'
             }
         }
@@ -22,10 +31,10 @@ pipeline {
 
     post {
         success {
-            echo 'Build Successful'
+            echo '✅ CI Pipeline: Dependencies Installed, Tests Passed, Build Successful'
         }
         failure {
-            echo 'Build Failed'
+            echo '❌ CI Pipeline Failed'
         }
     }
 }
