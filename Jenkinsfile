@@ -5,6 +5,10 @@ pipeline {
         nodejs 'Node20' 
     }
 
+    environment {
+        IMAGE_NAME = 'gocart-app'    // Docker image name
+    }
+
     stages {
 
         stage('Install Dependencies') {
@@ -27,11 +31,20 @@ pipeline {
                 bat 'npm run build'
             }
         }
+
+        stage('Build Docker Image') {
+            when {
+                expression { return true }  // Set true when Docker installed
+            }
+            steps {
+                bat 'docker build -t %IMAGE_NAME% .'
+            }
+        }
     }
 
     post {
         success {
-            echo '✅ CI Pipeline: Dependencies Installed, Tests Passed, Build Successful'
+            echo '✅ CI Pipeline Success: Test + Build + Docker stages ready'
         }
         failure {
             echo '❌ CI Pipeline Failed'
