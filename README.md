@@ -27,10 +27,12 @@ A modern responsive e-commerce platform built with React and Redux Toolkit, feat
 ## 📁 Project Structure
 
 ```
-Frontend-React/reduxEcommerce/
+GoCart/
 ├── public/                  # Static files
+│   └── vitee.png           # Project logo/image
 ├── src/                     # Source files
 │   ├── assets/              # Images and static assets
+│   │   └── react.svg        # React logo
 │   ├── components/          # Reusable UI components
 │   │   ├── CartItem.jsx     # Shopping cart item component
 │   │   ├── Footer.jsx       # Footer component
@@ -47,21 +49,35 @@ Frontend-React/reduxEcommerce/
 │   ├── context/             # Context providers
 │   │   └── AuthContext.jsx  # Authentication context
 │   ├── pages/               # Page components
+│   │   ├── About.jsx        # About page
 │   │   ├── Cart.jsx         # Shopping cart page
 │   │   ├── Contact.jsx      # Contact page
 │   │   ├── Home.jsx         # Home page
-│   │   └── Products.jsx     # Products listing page
+│   │   └── Shop.jsx         # Products listing page
 │   ├── redux/               # Redux state management
 │   │   ├── Slices/          # Redux slices
-│   │   │   └── CartSlice.js # Cart state management
-│   │   └── store.js         # Redux store configuration
+│   │   │   ├── CartSlice.js # Cart state management
+│   │   │   └── UserSlice.jsx # User state management
+│   │   └── Store.jsx        # Redux store configuration
+│   ├── tests/               # Test files
+│   │   ├── App.test.jsx     # App component tests
+│   │   └── setup.js         # Test setup configuration
 │   ├── utils/               # Utility functions
 │   │   └── currencyConverter.js # Currency formatting utilities
 │   ├── App.jsx              # Main application component
+│   ├── App.css              # App component styles
 │   ├── main.jsx             # Entry point
 │   └── index.css            # Global styles
+├── dist/                    # Build output directory
+├── node_modules/            # Dependencies
+├── babel.config.cjs         # Babel configuration
+├── Dockerfile               # Docker configuration
+├── eslint.config.js         # ESLint configuration
 ├── index.html               # HTML entry point
+├── Jenkinsfile              # Jenkins CI/CD configuration
+├── jest.config.cjs          # Jest test configuration
 ├── package.json             # Dependencies and scripts
+├── package-lock.json        # Locked dependency versions
 ├── vite.config.js           # Vite configuration
 └── README.md                # Project documentation
 ```
